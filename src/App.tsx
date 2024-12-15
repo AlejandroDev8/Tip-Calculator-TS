@@ -5,7 +5,7 @@ import UseOrder from "./hooks/UseOrder"
 
 export const App = () => {
 
-  const {order , addItem, removeItem} = UseOrder()
+  const {order , addItem, removeItem, increaseQuantity, decreaseQuantity} = UseOrder()
 
   return (
     <>
@@ -20,12 +20,19 @@ export const App = () => {
         <h2 className="text-4xl font-black">Menú</h2>
         <section className="space-y-2 mt-10">
           {menuItems.map(item => (
-            <MenuItems key={item.id} item={item} addItem={addItem}/>
+            <MenuItems
+              key={item.id}
+              item={item}
+              addItem={addItem}/>
           ))}
         </section>
       </div>
       <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-        <OrderContents order={order} removeItem={removeItem}/>
+        <OrderContents
+          order={order}
+          removeItem={removeItem}
+          increaseQuantity={increaseQuantity}
+          decreaseQuantity={decreaseQuantity}/>
       </div>
     </main>
     </>
