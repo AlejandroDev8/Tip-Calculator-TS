@@ -1,7 +1,10 @@
 import { MenuItems } from "./components/MenuItems"
 import { menuItems } from "./data/database"
+import UseOrder from "./hooks/UseOrder"
 
 export const App = () => {
+
+  const {addItem} = UseOrder()
 
   return (
     <>
@@ -16,7 +19,7 @@ export const App = () => {
         <h2 className="text-4xl font-black">Menú</h2>
         <section className="space-y-2 mt-10">
           {menuItems.map(item => (
-            <MenuItems key={item.id} item={item}/>
+            <MenuItems key={item.id} item={item} addItem={addItem}/>
           ))}
         </section>
       </div>
