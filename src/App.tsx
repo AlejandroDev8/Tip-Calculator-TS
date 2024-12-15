@@ -15,7 +15,7 @@ export const App = () => {
       <div>
         <h2>Menú</h2>
         {menuItems.map(item => (
-          <MenuItems key={item.id}/>
+          <MenuItems key={item.id} item={item}/>
         ))}
       </div>
       <div>

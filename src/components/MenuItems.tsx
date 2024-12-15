@@ -1,5 +1,14 @@
-export const MenuItems = () => {
+import type {MenuItemsType} from '../types'
+
+type MenuItemsProps = {
+  item: MenuItemsType
+}
+
+export const MenuItems = ({item} : MenuItemsProps) => {
   return (
-    <div>MenuItems</div>
+    <>
+      <p>{item.name}</p>
+      <p className='font-black'>${item.price}</p>
+    </>
   )
 }
