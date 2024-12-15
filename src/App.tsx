@@ -5,7 +5,7 @@ import UseOrder from "./hooks/UseOrder"
 
 export const App = () => {
 
-  const {order , addItem} = UseOrder()
+  const {order , addItem, removeItem} = UseOrder()
 
   return (
     <>
@@ -25,7 +25,7 @@ export const App = () => {
         </section>
       </div>
       <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-        <OrderContents order={order}/>
+        <OrderContents order={order} removeItem={removeItem}/>
       </div>
     </main>
     </>
