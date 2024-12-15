@@ -1,5 +1,6 @@
 import { MenuItems } from "./components/MenuItems"
 import { OrderContents } from "./components/OrderContents"
+import { OrderTotal } from "./components/OrderTotal"
 import { menuItems } from "./data/database"
 import UseOrder from "./hooks/UseOrder"
 
@@ -32,7 +33,11 @@ export const App = () => {
           order={order}
           removeItem={removeItem}
           increaseQuantity={increaseQuantity}
-          decreaseQuantity={decreaseQuantity}/>
+          decreaseQuantity={decreaseQuantity}
+        />
+        <OrderTotal 
+          order={order}
+        />
       </div>
     </main>
     </>
