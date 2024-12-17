@@ -7,7 +7,7 @@ import UseOrder from "./hooks/UseOrder"
 
 export const App = () => {
 
-  const {order , addItem, removeItem, increaseQuantity, decreaseQuantity} = UseOrder()
+  const {order, addItem, removeItem, increaseQuantity, decreaseQuantity, tip, setTip} = UseOrder()
 
   return (
     <>
@@ -37,10 +37,11 @@ export const App = () => {
           decreaseQuantity={decreaseQuantity}
         />
         <TipPercentageForm 
-          
+          setTip={setTip}
         />
         <OrderTotal 
           order={order}
+          tip={tip}
         />
       </div>
     </main>
