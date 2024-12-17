@@ -3,25 +3,27 @@ import { tipOptions } from "../data/databaseTip"
 
 type TipPercentageFormProps = {
   setTip: Dispatch<SetStateAction<number>>
+  tip: number
 }
 
-export const TipPercentageForm = ({setTip} : TipPercentageFormProps) => {
+export const TipPercentageForm = ({setTip, tip} : TipPercentageFormProps) => {
   return (
     <div>
       <h3 className="font-black text-2xl">Propina:</h3>
       <form>
-        {tipOptions.map(tip =>(
+        {tipOptions.map(tipOption =>(
           <div
-            key={tip.id}
+            key={tipOption.id}
             className="flex gap-2"
           >
-            <label htmlFor={tip.id}>{tip.label}</label>
+            <label htmlFor={tipOption.id}>{tipOption.label}</label>
             <input 
               type="radio"
               name="tip"
-              id={tip.id}
-              value={tip.value}
+              id={tipOption.id}
+              value={tipOption.value}
               onChange={e => setTip(+e.target.value)}
+              checked={tip === tipOption.value}
             />
           </div>
         ))}
