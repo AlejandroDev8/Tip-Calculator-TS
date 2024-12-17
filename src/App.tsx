@@ -1,6 +1,7 @@
 import { MenuItems } from "./components/MenuItems"
 import { OrderContents } from "./components/OrderContents"
 import { OrderTotal } from "./components/OrderTotal"
+import { TipPercentageForm } from "./components/TipPercentageForm"
 import { menuItems } from "./data/database"
 import UseOrder from "./hooks/UseOrder"
 
@@ -34,6 +35,9 @@ export const App = () => {
           removeItem={removeItem}
           increaseQuantity={increaseQuantity}
           decreaseQuantity={decreaseQuantity}
+        />
+        <TipPercentageForm 
+          
         />
         <OrderTotal 
           order={order}
