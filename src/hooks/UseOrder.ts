@@ -7,6 +7,8 @@ export default function UseOrder() {
   const MAX_QUANTITY = 10
   const MIN_QUANTITY = 1
 
+  const [tip, setTip] = useState(0)
+
   const addItem = (item: MenuItemsType) => {
 
     const intemExist = order.find(orderItem => orderItem.id === item.id)
@@ -50,6 +52,8 @@ export default function UseOrder() {
 
   return {
     order,
+    tip,
+    setTip,
     addItem,
     removeItem,
     increaseQuantity,
